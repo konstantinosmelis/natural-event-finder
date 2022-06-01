@@ -1,4 +1,3 @@
-import pandas as pd
 import folium
 import geocoder
 import datafinder
@@ -7,6 +6,7 @@ import utils
 def create_map():
     p = geocoder.ip('me')
     map = folium.Map(location=p.latlng, zoom_start=4, control_scale=True)
+    map.save("./templates/map.html")
     return map
 
 
@@ -22,6 +22,6 @@ def add_points(map, data):
 
 
 def generate_map(events):
-    data = datafinder.get_full_data(events)
     map = create_map()
+    data = datafinder.get_full_data(events)
     add_points(map, data)

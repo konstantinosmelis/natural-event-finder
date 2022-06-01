@@ -1,8 +1,5 @@
 import spacy
 from spacy.lang.en import English
-import os
-import sys
-import nltk
 import json
 import tweetsearch
 

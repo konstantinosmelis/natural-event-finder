@@ -9,7 +9,9 @@ app = Flask(__name__)
 def thread_function():
     events = ['#earthquake', '#forestfire', '#storm']
     while True:
+        print("Generating map...")
         mapgenerator.generate_map(events)
+        print("Done")
         time.sleep(120)
 
 
